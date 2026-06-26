@@ -1,7 +1,16 @@
 ﻿#include "renderer.h"
-#include <iostream>
 
 int main() {
-	std::cout << "yo" << std::endl;
-	return 0;
+    
+    try {
+        Renderer renderer;
+        renderer.initRenderer();
+        return EXIT_SUCCESS;
+    }
+    catch(const std::exception& e){
+        std::cerr << e.what() << std::endl;
+        return EXIT_FAILURE;
+    }
+
+    return 0;
 }
